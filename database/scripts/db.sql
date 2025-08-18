@@ -1,48 +1,32 @@
 --
--- Database : `Test-tremplin`
+-- Database : `Test-majhordhom`
 --
-DROP DATABASE IF EXISTS `Test-tremplin`;
-CREATE DATABASE IF NOT EXISTS `Test-tremplin`;
-USE `Test-tremplin`;
+DROP DATABASE IF EXISTS `Test-majhordhom`;
+CREATE DATABASE IF NOT EXISTS `Test-majhordhom`;
+USE `Test-majhordhom`;
+
+-- DROP TABLE IN ORDER
+
+DROP TABLE IF EXISTS `form`;
 
 --
--- REQUEST TABLE
+-- FORM TABLE
 --
 
-CREATE TABLE IF NOT EXISTS `request` (
-    `id_request` INT AUTO_INCREMENT,
-    `message` TEXT,
-    `visit_request` BOOLEAN,
-    `callback` BOOLEAN,
-    `more_pictures` BOOLEAN,
-    PRIMARY KEY (`id_request`),
-);
-
---
--- USER TABLE
---
-
-CREATE TABLE IF NOT EXISTS `user` (
-    `id_user` INT AUTO_INCREMENT,
-    `lastname` VARCHAR(100),
-    `firstname` VARCHAR(100),
-    `email` VARCHAR(100),
+CREATE TABLE IF NOT EXISTS `form`(
+    `id_form` INT AUTO_INCREMENT,
+    `lastname` VARCHAR(100) NOT NULL,
+    `firstname` VARCHAR(100) NOT NULL,
+    `email` VARCHAR(100) NOT NULL,
     `phonenumber` VARCHAR(20) NOT NULL,
-    `id_visit` INT,
-    `id_message` INT,
-    PRIMARY KEY (`id_user`),
-    FOREIGN KEY (`id_visit`) REFERENCES visit(`id_visit`) ON DELETE CASCADE,
-    FOREIGN KEY (`id_message`) REFERENCES request(`id_message`) ON DELETE CASCADE
-);
-
---
--- VISIT TABLE
---
-
-CREATE TABLE IF NOT EXISTS `visit` (
-    `id_visit` INT AUTO_INCREMENT,
-    `availability` DATE,
-    `hour` TIME,
-    `minute` TIME,
-    PRIMARY KEY (`id_visit`),
+    `content` TEXT,
+    `visit_requested` BOOLEAN,
+    `callback_requested` BOOLEAN,
+    `more_pictures_requested` BOOLEAN,
+    `availability_date` DATE,
+    `availability_hour` TIME,
+    `availability_minute` TIME,
+    PRIMARY KEY (`id_form`),
+    UNIQUE KEY `email` (`email`),
+    UNIQUE KEY `phonenumber` (`phonenumber`)   
 );

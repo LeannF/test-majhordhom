@@ -1,0 +1,17 @@
+{
+    "name": "ll/database",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ll\\Database\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "LeannF",
+            "email": "leann.farant@outlook.fr"
+        }
+    ]
+}
