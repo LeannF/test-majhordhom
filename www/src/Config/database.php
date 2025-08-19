@@ -4,8 +4,14 @@
     use PDO;
     use PDOException;
     use Dotenv\Dotenv;
+
+    // Affiche les erreurs pour le debug
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
+
     // Charge automatiquement les classes installées avec Composer
-    require_once __DIR__. '/../vendor/autoload.php';
+    require_once __DIR__. '/../../vendor/autoload.php';
 
 
     class Database{
@@ -14,7 +20,7 @@
         public static function getInstance(): PDO{
             if (self::$instance === null) {
                 // Charge les variables du fichier .env
-                $dotenv = Dotenv::createImmutable(__DIR__); // __DIR__ = dossier actuel
+                $dotenv = Dotenv::createImmutable(__DIR__ . "/../.."); // __DIR__ = dossier actuel
                 $dotenv->load();
 
                 $host = $_ENV['DB_HOST'];
