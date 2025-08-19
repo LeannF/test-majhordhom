@@ -1,0 +1,47 @@
+body{
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    color: white;
+    font-weight: 400;
+}
+
+
+h2, .btn{
+    text-transform: uppercase;
+    margin-bottom: 2em;
+    font-size: medium;
+}
+
+form{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../public/salon.png");
+    background-blend-mode: darken;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2em;
+    padding-left: 2em;
+}
+
+.d-row{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.form-select, .form-control{
+    width: 80%;
+    border-radius: 5em;
+    padding-left: 1em;
+}
+
+.form-control-textarea{
+    width: 80%;
+    border-radius: 2em;
+    padding: 1em;
+}
+
+.btn{
+    color: white;
+    width: 50%;
+    border-radius: 2em;
+}
