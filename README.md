@@ -24,7 +24,7 @@ l'examen du titre professionnel developpeur web et mobile.
     ```terminal
     npm install
  
-4. Créer un fichier .env avec les informations suivantes:
+4. Créer un fichier .env dans le dossier www avec les informations suivantes:
     ```terminal
     DB_HOST=db
     DB_NAME=Test-majhordhom
