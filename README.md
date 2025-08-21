@@ -14,7 +14,7 @@ l'examen du titre professionnel developpeur web et mobile.
 
 1. Cloner le repo :
    ```terminal
-   git clone https://github.com/LeannF/Application-MVC.git
+   git clone https://github.com/LeannF/test-majhordhom.git
 
 2. Installer les dépendances pour le backend:
     ```terminal
